@@ -1,7 +1,8 @@
 /* =============================================================
-   dados.js — gerado automaticamente por gerar_dados.py
-   Atualizado em: 2026-03-02 05:23:32
-   Jogos carregados: 243
+   dados.js — gerado por gerar_dados.py
+   Atualizado em: 2026-03-02 11:14:05
+   Fonte: 0_PAINEL_CLAUDE_JOGOS_RODADA_ATUAL.csv
+   Jogos: 243
    ============================================================= */
 
 var CSV_EMBUTIDO = `
@@ -251,7 +252,7 @@ DataHora_Jg,Data,Hora_Jg,Liga,rodada,casa,fora,Met_final,Confianca_regra,CS%_Ca,
 2026-02-28 18:10,2026-02-28,18:10,Colambia_1,9,Alianza Petrolera,América de Cali,Sem_Entrada,—,0.0,0.33,0.57,0.67,0.57,0.33,0.43,1.0,0.57,0.33,0.08000000000000002,0.54,0.64,-0.8700000000000001,0.0,1.0,0.0,0.33,0.0,0.67,0,0,17,11,0.0,0.67,1.0,0.67,3,3,0.67,0.33,1.0,0.335,0.835,3,3.5100000000000002,False,True,False,False,False,False,2,True,True,False,True,3,-1,False,False,False,False,False,False,0,False,False,True,False,1,-1,False,True,True,False,4,True,True,2,-1,True,False,True,False,4,False,True,1,-1,-6,0.0,-0.34,-1.0,-1.0,-1.0,-1.0,Sem_Entrada,—,-1.0,—,⚠️ Amostra pequena (3 jogos) | ⚠️ Risco empate 100%,-1.0,-1.6832500000000001,EVITAR,0.0,⚠️ Amostra baixa (Amostra_min=3) | ⚠️ Amostra pequena (3 jogos) | ⚠️ Risco empate 100%,Base(Score_Escolhido)=-1.00 | Ajuste_deltas=+0.10 | Penal_risco_emp=-0.22 | Penal_amostra=-0.56 | IVR_Total=-1.68
 `;
 
-/* Chama o auto-carregamento definido no index.html */
-if(typeof autoCarregarDados === 'function'){
+/* Dispara o carregamento automático no index.html */
+if (typeof autoCarregarDados === 'function') {
   autoCarregarDados();
 }
