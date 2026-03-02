@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>⚽ Análise de Forças — Betting Dashboard</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="dados.js"></script>
 <script>
 /* ═══ ABA JOGOS IN-LIVE ════════════════════════════════ */
 
@@ -913,7 +914,7 @@ td{padding:10px 9px;font-size:12px;border-bottom:1px solid var(--bg3);}
   <div class="upload-box" id="drop-zone">
     <div class="upload-icon">&#x26BD;</div>
     <div class="upload-title">Análise de Forças</div>
-    <div class="upload-sub">Arraste seu arquivo CSV aqui<br>ou clique para selecionar</div>
+    <div class="upload-sub">Os jogos da rodada carregam automaticamente.<br>Ou arraste um novo CSV para atualizar os dados.</div>
     <button class="upload-btn" id="btn-sel">&#x1F4C1; Selecionar CSV</button>
     <input type="file" id="file-input" accept=".csv,.txt"/>
   </div>
@@ -1100,6 +1101,17 @@ function lerArquivo(f){
   r.onerror = function(){ mostrarErro('Nao foi possivel ler o arquivo.'); };
   r.readAsText(f, 'UTF-8');
 }
+
+/* ═══ AUTO-CARREGAMENTO via dados.js ════════════════════ */
+(function(){
+  if(typeof CSV_EMBUTIDO !== 'undefined' && CSV_EMBUTIDO.trim().length > 10){
+    try {
+      processarCSV(CSV_EMBUTIDO);
+    } catch(e) {
+      console.warn('Auto-carregamento falhou:', e);
+    }
+  }
+})();
 function mostrarErro(msg){ document.getElementById('erro-txt').textContent = msg; document.getElementById('erro-box').style.display = 'block'; }
 function esconderErro(){ document.getElementById('erro-box').style.display = 'none'; }
 
@@ -1163,7 +1175,7 @@ function normalizar(raw){
       liga:         gv(r,m,'Liga','liga'),
       casa:         gv(r,m,'casa','Casa','time_casa','mandante','home'),
       fora:         gv(r,m,'fora','Fora','time_fora','visitante','away'),
-      mercado:      gv(r,m,'Met_sugerido','Met sugerido','Mercado','mercado'),
+      mercado:      gv(r,m,'Met_sugerido','Met_final','Met sugerido','Mercado','mercado'),
       confianca:    gv(r,m,'Confianca','Confiança','confianca'),
       cs_ca:        toN(gv(r,m,'CS%_Ca','CS%Ca','cs_ca','CS_Ca')),
       cs_fo:        toN(gv(r,m,'CS%_Fo','CS%Fo','cs_fo','CS_Fo')),
