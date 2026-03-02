@@ -1,6 +1,6 @@
 /* =============================================================
-   dados.js — gerado automaticamente
-   Atualizado em: 2026-03-02 05:19:07
+   dados.js — gerado automaticamente por gerar_dados.py
+   Atualizado em: 2026-03-02 05:23:32
    Jogos carregados: 243
    ============================================================= */
 
@@ -250,3 +250,8 @@ DataHora_Jg,Data,Hora_Jg,Liga,rodada,casa,fora,Met_final,Confianca_regra,CS%_Ca,
 2026-03-01 11:00,2026-03-01,11:00,Grecia_1,23,Panserraikos,Olympiakos Piraeus,Sem_Entrada,—,0.0,0.64,0.27,0.36,0.91,1.0,0.09,0.18,0.77,0.64,-0.37999999999999995,-2.92,-0.56,0.98,0.27,0.09,0.64,0.55,0.36,0.09,14,2,12,2,0.55,0.27,0.36,0.36,11,11,0.36,1.19,0.36,0.41000000000000003,0.36,11,3.54,False,False,False,False,True,False,2,False,False,False,False,0,-1,True,True,True,False,True,False,8,True,True,True,True,4,-1,False,False,False,False,0,True,False,1,-1,False,False,False,False,0,False,False,0,-1,-10,-0.37,0.4600000000000001,-1.0,-1.0,-1.0,-1.0,Sem_Entrada,—,-1.0,—,⚠️ Risco empate 36%,-1.0,-1.4955,EVITAR,0.0,⚠️ Risco empate 36%,Base(Score_Escolhido)=-1.00 | Ajuste_deltas=-0.38 | Penal_risco_emp=-0.11 | IVR_Total=-1.50
 2026-02-28 18:10,2026-02-28,18:10,Colambia_1,9,Alianza Petrolera,América de Cali,Sem_Entrada,—,0.0,0.33,0.57,0.67,0.57,0.33,0.43,1.0,0.57,0.33,0.08000000000000002,0.54,0.64,-0.8700000000000001,0.0,1.0,0.0,0.33,0.0,0.67,0,0,17,11,0.0,0.67,1.0,0.67,3,3,0.67,0.33,1.0,0.335,0.835,3,3.5100000000000002,False,True,False,False,False,False,2,True,True,False,True,3,-1,False,False,False,False,False,False,0,False,False,True,False,1,-1,False,True,True,False,4,True,True,2,-1,True,False,True,False,4,False,True,1,-1,-6,0.0,-0.34,-1.0,-1.0,-1.0,-1.0,Sem_Entrada,—,-1.0,—,⚠️ Amostra pequena (3 jogos) | ⚠️ Risco empate 100%,-1.0,-1.6832500000000001,EVITAR,0.0,⚠️ Amostra baixa (Amostra_min=3) | ⚠️ Amostra pequena (3 jogos) | ⚠️ Risco empate 100%,Base(Score_Escolhido)=-1.00 | Ajuste_deltas=+0.10 | Penal_risco_emp=-0.22 | Penal_amostra=-0.56 | IVR_Total=-1.68
 `;
+
+/* Chama o auto-carregamento definido no index.html */
+if(typeof autoCarregarDados === 'function'){
+  autoCarregarDados();
+}

@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>⚽ Análise de Forças — Betting Dashboard</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="dados.js" defer></script>
 <script>
 /* ═══ ABA JOGOS IN-LIVE ════════════════════════════════ */
 
@@ -1102,15 +1103,12 @@ function lerArquivo(f){
 }
 
 /* ═══ AUTO-CARREGAMENTO via dados.js ════════════════════ */
-window.addEventListener('load', function(){
+/* O dados.js chama autoCarregarDados() após ser carregado  */
+function autoCarregarDados(){
   if(typeof CSV_EMBUTIDO !== 'undefined' && CSV_EMBUTIDO.trim().length > 10){
-    try {
-      processarCSV(CSV_EMBUTIDO);
-    } catch(e) {
-      console.warn('Auto-carregamento falhou:', e);
-    }
+    try { processarCSV(CSV_EMBUTIDO); } catch(e){ console.warn('Falha ao carregar dados:', e); }
   }
-});
+}
 function mostrarErro(msg){ document.getElementById('erro-txt').textContent = msg; document.getElementById('erro-box').style.display = 'block'; }
 function esconderErro(){ document.getElementById('erro-box').style.display = 'none'; }
 
@@ -3321,6 +3319,5 @@ function executarExport(){
 }
 
 </script>
-<script src="dados.js"></script>
 </body>
 </html>
