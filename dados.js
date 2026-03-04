@@ -1,6 +1,6 @@
 /* =============================================================
    dados.js — gerado por gerar_dados.py
-   Atualizado em: 2026-03-04 12:42:04
+   Atualizado em: 2026-03-04 12:49:32
    Fonte: 0_PAINEL_CLAUDE_JOGOS_RODADA_ATUAL.csv
    Jogos: 232
    ============================================================= */
